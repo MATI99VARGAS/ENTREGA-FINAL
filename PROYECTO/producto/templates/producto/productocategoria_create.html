@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Formulario de creación de categoria de productos</title>
+        <link href="{% static 'core/css/estilos.css' %}" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <section class="form-register">
+            <h4>FORMULARIO DE REGISTRO DE CATEGORÍAS DE PRODUCTOS</h4>
+            <form action="" method="post">
+              {% csrf_token %}
+          
+              <p>Nombre: <input class="controls" type="text" name="nombre" id="nombre" required></p>
+              <p>Descripción: <input class="controls" type="text" name="descripcion" id="descripcion" required></p>
+              
+        
+              <input class="botons" type="submit" value="REGISTRAR">
+            </form>
+            
+        </section>
+
+        <a href="{% url 'core:Home' %}">
+
+            <section class="page-section bg-primary" id="about">
+              <div class="container px-4 px-lg-5">
+                  <div class="row gx-4 gx-lg-5 justify-content-center">
+                      <div class="col-lg-8 text-center">
+                          <h2 class="text-white mt-0">VOLVER AL INCIO</h2>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+        <footer class="footer text-faded text-center py-5">
+            <div class="container"><p class="m-0 small">La Esquina del Sabor &copy; 2024</p></div>
+        </footer>
+
+{% endblock contenido %}

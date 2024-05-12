@@ -1,0 +1,121 @@
+    {% extends 'core/base.html' %}
+    {% load static %}
+    {% block  titulo%}
+    <section class="page-section">
+      <div class="container">
+          <div class="product-item">
+              <div class="product-item-title d-flex">
+                  <div class="bg-faded p-5 d-flex me-auto rounded">
+                      <h2 class="section-heading mb-0"> 
+                          <span class="section-heading-lower">PRODUCTOS HECHOS CON AMOR</span>
+                      </h2>
+                    </div>
+              </div>
+          </div>
+        </div>
+    </section>    
+    {% endblock titulo %}
+
+    {% block contenido %}
+
+    <section class="page-section">
+      <div class="container">
+          <div class="product-item">
+              <div class="product-item-title d-flex">
+                  <div class="bg-faded p-5 d-flex ms-auto rounded">
+                      <h2 class="section-heading mb-0">
+                          <span class="section-heading-upper">Mezclado a la perfección</span>
+                          <p></p>
+                          <span class="section-heading-lower">Café & Té</span>
+                      </h2>
+                  </div>
+              </div>
+              <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'core/imagenes/products-01_2.webp' %}" alt="..." />
+              <div class="product-item-description d-flex me-auto">
+                  <div class="bg-faded p-5 rounded"><p class="mb-0">
+                    Cada vez que nos pida una bebida, le garantizamos que será una experiencia que valdrá la pena vivir. 
+                    Ya sea nuestro mundialmente famoso capuchino venezolano, un refrescante té de hierbas helado o algo tan simple como una taza de café negro especial,
+                    le aseguramos que volverá por más.          </p>
+                  </div>
+              </div>
+      </div>
+  </section>
+  <section class="page-section">
+      <div class="container">
+          <div class="product-item">
+              <div class="product-item-title d-flex">
+                  <div class="bg-faded p-5 d-flex me-auto rounded">
+                      <h2 class="section-heading mb-0">
+                          <span class="section-heading-upper">LA MEJOR COMIDA</span>
+                          <p></p>
+                          <span class="section-heading-lower">DESAYUNO, ALMUERZO, MERIENDA Y CENA</span>
+                      </h2>
+                  </div>
+              </div>
+              <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'core/imagenes/products-02.webp' %}" alt="..." />
+              <div class="product-item-description d-flex ms-auto">
+                  <div class="bg-faded p-5 rounded"><p class="mb-0"></p>
+                    Nuestro menú de temporada incluye productos horneados e incluso comidas completas perfectas para el desayuno, el almuerzo, la  merienda o la cena.
+                    Obtenemos nuestros ingredientes de granjas orgánicas locales siempre que sea posible, junto con proveedores premium de productos especiales.</p></div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="page-section">
+      <div class="container">
+          <div class="product-item">
+              <div class="product-item-title d-flex">
+                  <div class="bg-faded p-5 d-flex ms-auto rounded">
+                      <h2 class="section-heading mb-0">
+                          <span class="section-heading-upper">PROVENIENTES DE TODO EL MUNDO</span>
+                          <p></p>
+                          <span class="section-heading-lower">MAYORISTA EN MESCLAS ESPECIALES</span>
+                      </h2>
+                  </div>
+              </div>
+              <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'core/imagenes/products-03.webp' %}" alt="..." />
+              <div class="product-item-description d-flex me-auto">
+                  <div class="bg-faded p-5 rounded"><p class="mb-0">
+                    Viajar por el mundo en busca del café de la mejor calidad es algo de lo que estamos orgullosos. 
+                    Cuando nos visites, siempre encontrarás nuevas mezclas de todo el mundo, principalmente de regiones de Centro y Sudamérica. 
+                    Vendemos nuestras mezclas en cantidades mayorista y minorista. Visítenos en persona para obtener más detalles
+                  </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <div class="fs-3 pb-4 ">
+    <a href="{% url 'producto:buscador_productos' %}">
+      <h1 class="site-heading text-center text-faded d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">CONSULTAR CATEGORIAS DE PRODUCTOS</span></a>
+  </div> 
+    
+    </section>
+
+    <div class="fs-3 pb-4 ">
+      <a href="{% url 'producto:productocategoria_create' %}">
+        <h1 class="site-heading text-center text-faded d-none d-lg-block">
+        <span class="site-heading-upper text-primary mb-3">CREAR CATEGORÍAS DE PRODUCTO</span></a>
+    </div> 
+
+    <a href="{% url 'core:Home' %}">
+
+      <section class="page-section bg-primary" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0">VOLVER AL INCIO</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      </a>
+
+      <footer class="footer text-faded text-center py-5">
+        <div class="container"><p class="m-0 small">La Esquina del Sabor &copy; 2024</p></div>
+    </footer>
+    {% endblock  %}
+    

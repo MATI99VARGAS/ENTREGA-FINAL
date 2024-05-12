@@ -1,0 +1,155 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block titulo %}
+{% endblock titulo %}
+{% block contenido %}
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                <li class="nav-item"><a class="nav-link" href="{% url 'producto:Home' %}">PRODUCTOS</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'cliente:Home' %}">CLIENTES</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">CONTACTOS</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ABOUT">ABOUT</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'core/imagenes/intro.webp' %}" alt="..." />
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">Café que enamora</span>
+                    <P></P>
+                    <span class="section-heading-lower">Un momento para disfrutar</span>
+                </h2>
+                <p class="mb-3">Cada taza de nuestro café artesanal de calidad comienza con ingredientes finamente seleccionados. Una vez que lo pruebes, nuestro café será una maravillosa adición a tu rutina diaria. ¡Te lo garantizamos!
+
+                </p>
+                <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Nuestra Promesa</span>
+                        <P></P>
+                        <span class="section-heading-lower">para vos</span>
+                    </h2>
+                    <p class="mb-0">Cuando ingresas a nuestro establecimiento para comenzar el día, estamos dedicados a brindarte un servicio amable, un ambiente cálido y, sobre todo, excelentes productos elaborados con ingredientes de la más alta calidad. Si no está satisfecho, háganoslo saber y haremos todo lo posible para arreglar las cosas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section bg-primary" id="ABOUT">
+    <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="{% static 'core/imagenes/about.webp'%}" alt="..." />
+    <div class="container">
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="bg-faded rounded p-5">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">Café fuerte, mente fuerte</span>
+                            <P></P>
+                            <span class="section-heading-lower">ACERCA DE NUESTRO  CAFÉ</span>
+                        </h2>
+                        <p>Fundado en 1987, nuestro establecimiento ha estado sirviendo un esquisito café procedente de agricultores artesanales provenientes de varias regiones de América del Sur y Central. Nos dedicamos a viajar por el mundo, encontrar el mejor café y traerlo aquí en nuestra cafetería.</p>
+                        <p class="mb-0">
+                            Te garantizamos que caeras 
+                            <em>encantado</em>
+                            con nuestras deliciosas mezclas desde el momento en que entras hasta que terminas tu último sorbo.
+                            Nos encantará formar parte de rutina, cuando sales con amigos o simplemente para disfrutar de un tiempo a solas.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">VEN A VISITARNOS</span>
+                        <span class="section-heading-lower">ESTAMOS ABIERTOS TODOS LOS DÍAS</span>
+                    </h2>
+                    <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Domingo
+                            <span class="ms-auto">9:00 to 23:00 </span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Lunes
+                            <span class="ms-auto">7:00 to 22:00 </span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Martes
+                            <span class="ms-auto">7:00 to 22:00 </span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Miércoles
+                            <span class="ms-auto">7:00 to 22:00 </span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Jueves
+                            <span class="ms-auto">7:00 to 22:00 </span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Viernes
+                            <span class="ms-auto">7:00 to 22:00 </span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Sábado
+                            <span class="ms-auto">9:00 AM to 23:00 </span>
+                        </li>
+                    </ul>
+                    <p class="address mb-5" style="font-size: 2em;">
+                        <em>
+                            <strong>Avenida Las Heras 2450</strong>
+                            <br />
+                            Recoleta, CABA
+                        </em>
+                    </p>
+                    <p class="mb-0" style="font-size: 2em;">
+                        <em>Te esperamos!</em>
+                   </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="footer text-faded text-center py-5">
+    <div class="container"><p class="m-0 small">La Esquina del Sabor &copy; 2024</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="{% static 'core/js/scripts.js' %}></script>
+
+
+
+{% endblock contenido %}
