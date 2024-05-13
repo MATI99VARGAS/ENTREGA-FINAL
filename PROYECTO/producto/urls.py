@@ -6,6 +6,6 @@ urlpatterns = [
     path("",views.home,name="Home"),
     path("productocategoria/create/",views.productocategoria_create,name="productocategoria_create"),
     path("productos_buscador_categoria/",views.home_1,name="buscador_productos"),
-    path("productos_caracteristicas/<int:pk>",views.productos_caracteristicas,name="productos_caracteristicas")
+    path("productos_caracteristicas/<int:fk>",views.productos_caracteristicas,name="productos_caracteristicas"),
 
 ]

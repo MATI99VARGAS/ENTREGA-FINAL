@@ -40,7 +40,7 @@
     padding: 14px;
     color: rgb(255, 253, 251);
     margin: 16px 0;
-    font-size: 400px;
+    font-size: 40px;
 }
 
 .form-register p {
@@ -66,5 +66,12 @@
     font-size: 40px;
 }
 
-
-
+.bottons {
+    width: 100%;
+    background: rgb(77, 46, 0);
+    border: none;
+    padding: 10px;
+    color: rgb(255, 253, 251);
+    margin: 10px 0;
+    font-size: 15px;
+}

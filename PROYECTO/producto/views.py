@@ -39,7 +39,21 @@ def Producto_create(request):
         return render(request,"Producto/producto_create.html",context = {"form":form})
     
 
-def productos_caracteristicas(request,pk):
-    query = models.Producto.objects.get(id=pk)
-    return render(request,"productos_caracteristicas.html",context={"producto":query})
+def productos_caracteristicas(request,fk):
+    productos = models.Producto.objects.filter(categoria=fk)
+    context = {"productos": productos}
+    return render(request, "Producto/productos_caracteristicas.html", context)
+
+
+
+def productocategoria_update(request,pk):
+    query = models.Producto.objects.get(pk)
+    if request.method == "POST":
+        form = forms.ProductoCategoriaForm(request.POST, instance=query)
+        if form. is_valid():
+            form.save()
+            return redirect("producto:Home")
+    else:
+        form = forms.ProductoCategoriaForm()      
+    return render(request, "Producto/productocategoria_create.html",context={"form":form})
 
