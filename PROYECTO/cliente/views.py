@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django import forms
 from . import models, forms
+from django.views.generic import UpdateView
+from django.urls import reverse_lazy
 
 def home(request):
     consulta = request.GET.get("consulta", None)
@@ -25,8 +27,13 @@ def cliente_create(request):
         form = forms.Clientes_form()
     return render(request, "cliente/cliente_create.html",context={"form":form})
 
-from django.views.generic import UpdateView, DeleteView
-from django.urls import reverse_lazy
+
+def cliente_detail(request,pk):
+    cliente = models.cliente.objects.filter(id=pk)
+    context = {"cliente": cliente}
+    return render(request, "cliente/cliente_detail.html",context)
+
+
 
 def cliente_delete(request,pk:int):
     query = models.cliente.objects.get(id=pk)
