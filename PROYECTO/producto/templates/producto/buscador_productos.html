@@ -47,7 +47,14 @@
                 <a href="{% url 'producto:productos_caracteristicas' Producto.id  %}"><br>
                  
                   <input class="bottons" type="submit" value="VER PRODUCTOS"> </a>
-                
+                  
+                     
+                  <a href="{% url 'producto:producto_categoria_delete' Producto.id  %}"><br>
+                    <input class="bottons" type="submit" value="ELIMINAR CATEGORÍA"> </a> 
+                  
+                  <a href="{% url 'producto:producto_categoria_update' Producto.id  %}"><br>
+                      <input class="bottons" type="submit" value="MODIFICAR CATEGORÍA"> </a> 
+                  
               </h5>
               <p><span class="fw-bold">Descripción: </span> {{ Producto.descripcion }}</p>
             </div>

@@ -8,22 +8,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Formulario para modificar productos</title>
+        <title>ELIMINAR PRODUCTOS</title>
         <link href="{% static 'core/css/estilos.css' %}" rel="stylesheet"/>
     </head>
 
     <body>
         <section class="form-register">
-            <h4>FORMULARIO PARA MODIFICAR PRODUCTOS</h4>
+            <h4>ELIMINAR PRODUCTOS</h4>
+
+            <span class="fs-5 fst-italic">¿Confirma que desea eliminar este producto?</span> 
+
             <form action="" method="post">
               {% csrf_token %}
-              <table>
-                {{form.as_table}}
-              </table>
-              <input class="bottons" type="submit" value="GUARDAR CAMBIOS"> </a>
+              <input class="btn btn-danger" type="submit" value="CONFIRMAR">
             </form>
             
         </section>
+
 
         <a href="{% url 'producto:buscador_productos' %}">
 
@@ -31,7 +32,7 @@
               <div class="container px-4 px-lg-5">
                   <div class="row gx-4 gx-lg-5 justify-content-center">
                       <div class="col-lg-8 text-center">
-                          <h2 class="text-white mt-0">VOLVER A CATEGORIAS DE PRODUCTOS</h2>
+                          <h2 class="text-white mt-0">VOLVER A PRODUCTOS</h2>
                       </div>
                   </div>
               </div>

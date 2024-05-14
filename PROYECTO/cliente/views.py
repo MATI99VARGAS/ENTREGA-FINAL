@@ -24,4 +24,24 @@ def cliente_create(request):
     else:
         form = forms.Clientes_form()
     return render(request, "cliente/cliente_create.html",context={"form":form})
+
+from django.views.generic import UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+def cliente_delete(request,pk:int):
+    query = models.cliente.objects.get(id=pk)
+    if request.method == "POST":
+            query.delete()
+            return redirect("cliente:Home")
+    return render(request,"cliente/cliente_delete.html",context = {"form":query})
+
+class cliente_update(UpdateView):
+    model = models.cliente
+    form_class = forms.Clientes_form
+    template_name = "cliente/cliente_update.html"
+    success_url = reverse_lazy("cliente:Home")
+
+
+
+    
  

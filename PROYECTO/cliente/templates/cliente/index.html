@@ -38,17 +38,21 @@
 
         
     <div class="row">
-        {% for x in clientes %}
+        {% for Cliente in clientes %}
         <div class="col-md-3 pb-4">
           <div class="card mb-3" style="background-color: burlywood; color: black;">  <div class="card-body align-self-md-center my-1 ">
-              <h5 class="card-title text-nowrap">{{ x.nombre }} {{x.apellido}}</h5>
+              <h5 class="card-title text-nowrap">{{ Cliente.nombre }} {{Cliente.apellido}}</h5>
               <p class="card-text">
-                <span class="fw-bold">Nacionalidad:</span> {{ x.pais_origen_id }}<br>
-                <span class="fw-bold">Nacimiento:</span> {{ x.nacimiento|date:"d/m/Y" }} <br>
-                <span class="fw-bold">País de origen:</span> {{ x.pais_origen_id }}<br>
-                <span class="fw-bold">Nivel:</span> {{ x.nivel_sus }}
+                <span class="fw-bold">Nacionalidad:</span> {{Cliente.pais_origen_id }}<br>
+                <span class="fw-bold">Nacimiento:</span> {{ Cliente.nacimiento|date:"d/m/Y" }} <br>
+                <span class="fw-bold">País de origen:</span> {{ Cliente.pais_origen_id }}<br>
+                <span class="fw-bold">Nivel:</span> {{ Cliente.nivel_sus }}
                 
-              </p>
+                <a href="{% url 'cliente:cliente_delete' Cliente.id  %}"><br>
+                <input class="btn btn-danger " type="submit" value="ELIMINAR CLIENTE"> </a>
+                <a href="{% url 'cliente:cliente_update' Cliente.id  %}"><br>
+                  <input class="bottons" type="submit" value="MODIFICAR CLIENTE"> </a> </p>
+              </h5>
             </div>
           </div>
         </div>

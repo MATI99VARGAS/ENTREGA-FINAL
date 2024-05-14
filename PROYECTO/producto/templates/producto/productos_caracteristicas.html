@@ -21,11 +21,18 @@
                     <h5 class="card-title text-nowrap">{{ Producto.nombre }}
                     </h5>
                     <p class="card-text">
-                    <span class="fw-bold">Categoria: </span> {{ Producto.categoria }} <br>
                     
                     <span class="fw-bold">Precio: $</span> {{ Producto.precio_producto}} <br>
                     
                     <span class="fw-bold">Origen: </span> {{ Producto.Origen_producto }} <br>
+                    
+                    </div>
+                    <a href="{% url 'producto:producto_update' Producto.id  %}"><br>
+                        <input class="bottons" type="submit" value="MODIFICAR PRODUCTO"> </a>
+
+                    <div>
+                    <a href="{% url 'producto:producto_delete' Producto.id  %}"><br>
+                        <input class="bottons" type="submit" value="ELIMINAR PRODUCTO"> </a> 
                     </div>
                 </div>
             </div>
@@ -33,6 +40,13 @@
             {% endfor %}
                
         </div>
+
+
+        <div class="fs-3 pb-4 ">
+            <a href="{% url 'producto:producto_create' %}">
+              <h1 class="site-heading text-center text-faded d-none d-lg-block">
+              <span class="site-heading-upper text-primary mb-3">AGREGAR PRODUCTO</span></a>
+          </div> > 
             
 
         <a href="{% url 'core:Home' %}">
