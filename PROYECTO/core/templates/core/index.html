@@ -4,6 +4,14 @@
 {% endblock titulo %}
 {% block contenido %}
 
+{% if user.is_authenticated %}
+
+{{mensaje}}
+
+{% endif %}
+
+
+
 
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -31,6 +39,7 @@
                 {%else%}
                 
                 <li class="nav-item"><a class="nav-link" href="{% url 'core:login' %}">INICIAR SESIÓN</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'core:register' %}">REGISTRARSE</a></li>
 
                 {% endif %}
             </ul>
