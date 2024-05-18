@@ -93,12 +93,16 @@
   </div> 
     
     </section>
+    {% if user.is_authenticated %}
+    {% if user.username == 'admin' %} 
 
     <div class="fs-3 pb-4 ">
       <a href="{% url 'producto:productocategoria_create' %}">
         <h1 class="site-heading text-center text-faded d-none d-lg-block">
         <span class="site-heading-upper text-primary mb-3">CREAR CATEGORÍAS DE PRODUCTO</span></a>
     </div> > 
+    {% endif %}
+    {% endif %}
 
     <a href="{% url 'core:Home' %}">
 

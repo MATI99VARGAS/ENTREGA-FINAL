@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block contenido %}
-
+    {% if user.is_authenticated %}
+    {% if user.username == 'admin' %} 
 
 <html lang="es">
     <head>
@@ -44,5 +45,58 @@
             <div class="container"><p class="m-0 small">La Esquina del Sabor &copy; 2024</p></div>
         </footer>
         
+        {% else %}
+    <section class="page-section text-center">  <div class="container">
+      <div class="product-item">
+        <div class="product-item-title d-flex">
+          <div class="bg-faded p-5 d-flex me-auto rounded">
+            <h2 class="section-heading mb-0">
+              <span class="section-heading-lower">NO TIENES ACCESO PARA ENTRAR EN ESTA SECCIÓN!!! CONTACTA AL ADMINISTRADOR!!!</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a href="{% url 'core:Home' %}">
+
+    <section class="page-section bg-primary" id="about">
+      <div class="container px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+              <div class="col-lg-8 text-center">
+                  <h2 class="text-white mt-0">VOLVER AL INCIO</h2>
+              </div>
+          </div>
+      </div>
+  </section>
+  {% endif %}
+  
+  {% else %}
+  <section class="page-section text-center">  <div class="container">
+    <div class="product-item">
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex me-auto rounded">
+          <h2 class="section-heading mb-0">
+            <span class="section-heading-lower">NO TIENES ACCESO PARA ENTRAR EN ESTA SECCIÓN!!! CONTACTA AL ADMINISTRADOR!!!</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="{% url 'core:Home' %}">
+
+  <section class="page-section bg-primary" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-white mt-0">VOLVER AL INCIO</h2>
+            </div>
+        </div>
+    </div>
+</section>
+  {% endif %}
     
 {% endblock contenido %}

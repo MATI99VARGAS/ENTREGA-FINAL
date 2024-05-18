@@ -44,9 +44,15 @@
         <div class="col-md-3 pb-4">
           <div class="card mb-3" style="background-color: burlywood; color: black;">  <div class="card-body align-self-md-center my-1 ">
               <h5 class="card-title text-nowrap">{{ Producto.nombre }}
+                {% if Producto.imagen %}
+                <img src="{{ Producto.imagen.url }}">
+                {% endif %}
                 <a href="{% url 'producto:productos_caracteristicas' Producto.id  %}"><br>
                  
                   <input class="bottons" type="submit" value="VER PRODUCTOS"> </a>
+                   
+                {% if user.is_authenticated %}
+                {% if user.username == 'admin' %}
                   
                      
                   <a href="{% url 'producto:producto_categoria_delete' Producto.id  %}"><br>
@@ -54,7 +60,8 @@
                   
                   <a href="{% url 'producto:producto_categoria_update' Producto.id  %}"><br>
                       <input class="bottons" type="submit" value="MODIFICAR CATEGORÍA"> </a> 
-                  
+                  {% endif %}
+                  {% endif %}
               </h5>
               <p><span class="fw-bold">Descripción: </span> {{ Producto.descripcion }}</p>
             </div>

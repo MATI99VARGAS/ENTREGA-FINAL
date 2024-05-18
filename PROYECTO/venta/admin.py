@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from . import models
 
 class VentaAdmin(admin.ModelAdmin):
@@ -16,9 +15,6 @@ class VentaAdmin(admin.ModelAdmin):
     list_filter = ("vendedor",)
     
     date_hierarchy = "fecha_venta"
-
-
-
 
 
 

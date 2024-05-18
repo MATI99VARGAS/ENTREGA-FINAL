@@ -1,21 +1,19 @@
 from django.shortcuts import render, redirect
 from django import forms
 from . import models, forms
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView,TemplateView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 def home(request):
     consulta = request.GET.get("consulta", None)
-
     if consulta:
         query = models.cliente.objects.filter(nombre__icontains=consulta) 
-    
     else:
         query = models.cliente.objects.all()
-
     context = {"clientes":query}
-    
     return render(request,"cliente/index.html",context)
+
 
 def cliente_create(request):
     if request.method == "POST":
@@ -47,6 +45,7 @@ class cliente_update(UpdateView):
     form_class = forms.Clientes_form
     template_name = "cliente/cliente_update.html"
     success_url = reverse_lazy("cliente:Home")
+
 
 
 

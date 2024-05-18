@@ -16,35 +16,46 @@
         
         <div class="row">
             {% for Producto in productos %}
-            <div class="col-md-3 pb-4">
-                <div class="card mb-3" style="background-color: burlywood; color: black;">  <div class="card-body align-self-md-center my-1 ">
-                    <h5 class="card-title text-nowrap">{{ Producto.nombre }}
-                    </h5>
+              <div class="col-md-3 pb-4">  <div class="card mb-3" style="background-color: burlywood; color: black;">
+                  <div class="card-body align-self-md-center my-1 ">
+                    <h5 class="card-title text-nowrap">{{ Producto.nombre }}</h5>
                     <p class="card-text">
-                    
-                    <span class="fw-bold">Precio: $</span> {{ Producto.precio_producto}} <br>
-                    
-                    <span class="fw-bold">Origen: </span> {{ Producto.Origen_producto }} <br>
-                    
-                    </div>
-                    <a href="{% url 'producto:producto_update' Producto.id  %}"><br>
-                        <input class="bottons" type="submit" value="MODIFICAR PRODUCTO"> </a>
-                    <a href="{% url 'producto:producto_delete' Producto.id  %}"><br>
-                        <input class="bottons" type="submit" value="ELIMINAR PRODUCTO"> </a> 
-                    </div>
+                      <span class="fw-bold">Precio: $</span> {{ Producto.precio_producto }} <br>
+                      <span class="fw-bold">Origen: </span> {{ Producto.Origen_producto }} <br>
+                    </p>
+                  </div>
+                  {% if Producto.imagen %}
+                    <img src="{{ Producto.imagen.url }}">
+                  {% endif %}
+                  
+                  {% if user.is_authenticated %}
+                  {% if user.username == 'admin' %} 
+
+                  <a href="{% url 'producto:producto_update' Producto.id %}"><br>
+                    <input class="bottons" type="submit" value="MODIFICAR PRODUCTO">
+                  </a>
+                  <a href="{% url 'producto:producto_delete' Producto.id %}"><br>
+                    <input class="bottons" type="submit" value="ELIMINAR PRODUCTO">
+                  </a>
+                  {% endif %}
+                  {% endif %}
                 </div>
-            </div>
-        
+              </div>
             {% endfor %}
+          </div>
+        
                
         </div>
 
-
+        {% if user.is_authenticated %}
+        {% if user.username == 'admin' %} 
         <div class="fs-3 pb-4 ">
             <a href="{% url 'producto:producto_create' %}">
               <h1 class="site-heading text-center text-faded d-none d-lg-block">
               <span class="site-heading-upper text-primary mb-3">AGREGAR PRODUCTO</span></a>
           </div> > 
+          {% endif %}
+          {% endif %}
             
 
         <a href="{% url 'core:Home' %}">

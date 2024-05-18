@@ -15,11 +15,12 @@
     <body>
         <section class="form-register">
             <h4>FORMULARIO DE REGISTRO DE CATEGORÍAS DE PRODUCTOS</h4>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
               {% csrf_token %}
           
-              <p>Nombre: <input class="controls" type="text" name="nombre" id="nombre" required></p>
-              <p>Descripción: <input class="controls" type="text" name="descripcion" id="descripcion" required></p>
+              <table>
+                {{form.as_table}}
+              </table>
               
         
               <input class="botons" type="submit" value="REGISTRAR">
