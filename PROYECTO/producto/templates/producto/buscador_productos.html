@@ -43,9 +43,9 @@
     {% for Producto in productos %}
         <div class="col-md-3 pb-4">
           <div class="card mb-3" style="background-color: burlywood; color: black;">  <div class="card-body align-self-md-center my-1 ">
-              <h5 class="card-title text-nowrap">{{ Producto.nombre }}
+              <h5 class="card-title text-nowrap" style="text-align: center;">{{ Producto.nombre }}<br>
                 {% if Producto.imagen %}
-                <img src="{{ Producto.imagen.url }}">
+                <img src="{{ Producto.imagen.url }}" width="400" height="200">
                 {% endif %}
                 <a href="{% url 'producto:productos_caracteristicas' Producto.id  %}"><br>
                  

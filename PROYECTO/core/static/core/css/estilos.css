@@ -7,7 +7,7 @@
 .form-register{
     width: 100%;
     background: #2c1500;
-    padding: 30px;
+    padding: 30%;
     margin: auto;
     margin-top: 150px;
     border-radius: 40px;
@@ -17,7 +17,7 @@
 }
 
 .form-register h4{
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 
