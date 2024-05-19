@@ -39,4 +39,6 @@ class Error_view(TemplateView):
         context[error_image_path]=error_image_path  
         return context
 
+def about(request):
+    return render(request,"core/about.html")
 

@@ -5,15 +5,15 @@
 }
 
 .form-register{
-    width: 100%;
+    width: 50%;
     background: #2c1500;
-    padding: 30%;
+    padding: auto;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 50px;
     border-radius: 40px;
-    font-family: 'calibri';
+    font-family: 'Arial';
     color: rgb(255, 255, 255);
-    box-shadow: 7px 13px 37px #8a4601 ;
+    box-shadow: 7px 10px 37px #8a4601 ;
 }
 
 .form-register h4{
@@ -36,15 +36,16 @@
 .botons {
     width: 100%;
     background: rgb(160, 92, 4);
+    border-radius: 40px;
     border: none;
     padding: 14px;
     color: rgb(255, 253, 251);
     margin: 16px 0;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .form-register p {
-    height: 40 px;
+    height: 30 px;
     text-align: left;
     font-size: 30px;
 }
@@ -63,15 +64,16 @@
     padding: 14px;
     color: rgb(255, 253, 251);
     margin: 16px 0;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .bottons {
     width: 100%;
-    background: rgb(77, 46, 0);
+    background: rgb(160, 92, 4);
+    border-radius: 40px;
     border: none;
     padding: 10px;
     color: rgb(255, 253, 251);
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 20px;
 }
